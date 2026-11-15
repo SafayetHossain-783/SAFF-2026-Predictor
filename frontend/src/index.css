@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    min-height: 100dvh;
+  }
+
+  /* Selection colors */
+  ::selection {
+    background-color: #22C55E;
+    color: #fff;
+  }
+}
+
+@layer components {
+  /* Montserrat ExtraBold - headings, scores, countdown (NO italic) */
+  .font-heading {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  /* Panel with 60% opacity royal blue */
+  .saff-panel {
+    background-color: rgba(36, 56, 224, 0.6);
+    border-radius: 16px;
+  }
+
+  /* 3D Typography Classes - High Contrast White on Dark Background */
+  .text-3d-white {
+    color: #FFFFFF;
+    text-shadow:
+      0 1px 0 #CBD5E1,
+      0 2px 0 #94A3B8,
+      0 3px 0 #64748B,
+      0 4px 1px #334155,
+      0 6px 1px #0A1270,
+      0 10px 22px rgba(0, 0, 0, 0.75);
+  }
+
+  .text-3d-white-sm {
+    color: #FFFFFF;
+    text-shadow:
+      0 1px 0 #CBD5E1,
+      0 2px 0 #94A3B8,
+      0 3px 0 #64748B,
+      0 4px 1px #334155,
+      0 6px 12px rgba(0, 0, 0, 0.75);
+  }
+
+  /* 3D Typography Classes in Bangladesh Flag Theme (Solid 1-word 1-color with physical bevel) */
+  .text-3d-green {
+    color: #00E676;
+    text-shadow:
+      0 1px 0 #00a852,
+      0 2px 0 #008f45,
+      0 3px 0 #007538,
+      0 4px 0 #005c2c,
+      0 5px 0 #004220,
+      0 6px 1px rgba(0, 0, 0, 0.4),
+      0 10px 18px rgba(0, 0, 0, 0.65);
+  }
+
+  .text-3d-red {
+    color: #FF1744;
+    text-shadow:
+      0 1px 0 #d90d34,
+      0 2px 0 #b8092a,
+      0 3px 0 #990521,
+      0 4px 0 #7a0218,
+      0 5px 0 #5c0010,
+      0 6px 1px rgba(0, 0, 0, 0.4),
+      0 10px 18px rgba(0, 0, 0, 0.65);
+  }
+
+  /* Small / Subtitle 3D Typography Classes */
+  .text-3d-green-sm {
+    color: #00E676;
+    text-shadow:
+      0 1px 0 #008f45,
+      0 2px 0 #005c2c,
+      0 3px 6px rgba(0, 0, 0, 0.65);
+  }
+
+  .text-3d-red-sm {
+    color: #FF1744;
+    text-shadow:
+      0 1px 0 #b8092a,
+      0 2px 0 #7a0218,
+      0 3px 6px rgba(0, 0, 0, 0.65);
+  }
+
+  /* Base button — min 48px tall, rounded */
+  .saff-btn {
+    @apply inline-flex items-center justify-center gap-2 px-6 font-semibold rounded-full transition-all duration-200 active:scale-[0.97];
+    min-height: 48px;
+  }
+
+  /* Primary green CTA */
+  .saff-btn-green {
+    @apply saff-btn bg-saff-green text-white;
+  }
+  .saff-btn-green:hover {
+    background-color: #16a34a;
+  }
+
+  /* Secondary / ghost button */
+  .saff-btn-ghost {
+    @apply saff-btn bg-white/10 text-white;
+  }
+  .saff-btn-ghost:hover {
+    background-color: rgba(255, 255, 255, 0.18);
+  }
+
+  /* Disabled button */
+  .saff-btn:disabled {
+    @apply opacity-40 pointer-events-none;
+  }
+}
